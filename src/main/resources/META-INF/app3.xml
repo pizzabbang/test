@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="person" class="sample5_유하나.PersonImpl">
+		<constructor-arg>
+			<value>아이유</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>20</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>170</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>음악감상</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="student" class="sample5_유하나.StudentImpl">
+		<property name="kor">
+			<value>80</value>
+		</property>
+		<property name="eng">
+			<value>70</value>
+		</property>
+	</bean>
+	
+	<bean id="info" class="sample5_유하나.MyInfo">
+		<constructor-arg>
+			<ref bean="person"/>
+		</constructor-arg>
+		<property name="stu">
+			<ref bean="student"/>
+		</property>
+	</bean>
+</beans>
